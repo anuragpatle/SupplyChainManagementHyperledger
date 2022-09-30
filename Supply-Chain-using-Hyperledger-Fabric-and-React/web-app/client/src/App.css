@@ -1,0 +1,18 @@
+.prodlist{
+    float: left;
+}
+.createProduct{
+    float: right;
+}
+.collapse:not(.show) {
+    display: show;
+}
+body{
+    font-family: monospace;
+}
+@media (min-width: 768px){
+    .container, .container-md, .container-sm {
+        max-width: 880px;
+    }
+
+}
