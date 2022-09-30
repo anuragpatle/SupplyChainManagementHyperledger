@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "bf167922-c9c4-4845-9865-61f2343cb761",
+		"name": "Supplychain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : \"admin\",\n\t\"password\" : \"adminpw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/user/signin/:role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"user",
+								"signin",
+								":role"
+							],
+							"variable": [
+								{
+									"key": "role",
+									"value": "manufacturer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkbWluIiwiVXNlclR5cGUiOiJhZG1pbiIsIk5hbWUiOiJhZG1pbiIsImlhdCI6MTU5MDg1MjkwNywiZXhwIjoxNTkxNDU3NzA3fQ.sNyqbk_7IismVd19VZKT8J5c7YUzKZ3Pett5RgLa_Co",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Manufacturer user\",\n\t\"email\" : \"kk@hh.ll\",\n\t\"address\" : \"fgfhjbn\",\n\t\"password\" : \"manufacturerpwd\",\n\t\"userType\":\"manufacturer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/user/signup/:role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"user",
+								"signup",
+								":role"
+							],
+							"variable": [
+								{
+									"key": "role",
+									"value": "manufacturer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFkbWluIiwiVXNlclR5cGUiOiJhZG1pbiIsIk5hbWUiOiJhZG1pbiIsImlhdCI6MTU5MDg1MjkwNywiZXhwIjoxNTkxNDU3NzA3fQ.sNyqbk_7IismVd19VZKT8J5c7YUzKZ3Pett5RgLa_Co",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8090/user/all/:role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"user",
+								"all",
+								":role"
+							],
+							"variable": [
+								{
+									"key": "role",
+									"value": "manufacturer"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVzZXIxIiwiVXNlclR5cGUiOiJtYW51ZmFjdHVyZXIiLCJOYW1lIjoiTWFudWZhY3R1cmVyIHVzZXIiLCJpYXQiOjE1OTA5MDAyMTEsImV4cCI6MTU5MTUwNTAxMX0.NVnQqipuVQRHMh2fjHhEwUedDIgjmcusHAnQW3DzgIo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"shoes\",\n\t\"price\" :\"12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list prodcut by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVzZXIxIiwiVXNlclR5cGUiOiJtYW51ZmFjdHVyZXIiLCJOYW1lIjoiTWFudWZhY3R1cmVyIHVzZXIiLCJpYXQiOjE1OTA5MDAyMTEsImV4cCI6MTU5MTUwNTAxMX0.NVnQqipuVQRHMh2fjHhEwUedDIgjmcusHAnQW3DzgIo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8090/product/:productId/:role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								":productId",
+								":role"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "Product1"
+								},
+								{
+									"key": "role",
+									"value": "manufacturer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVzZXIxIiwiVXNlclR5cGUiOiJtYW51ZmFjdHVyZXIiLCJOYW1lIjoiTWFudWZhY3R1cmVyIHVzZXIiLCJpYXQiOjE1OTA5MDAyMTEsImV4cCI6MTU5MTUwNTAxMX0.NVnQqipuVQRHMh2fjHhEwUedDIgjmcusHAnQW3DzgIo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8090/product/:role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								":role"
+							],
+							"variable": [
+								{
+									"key": "role",
+									"value": "manufacturer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVzZXIxIiwiVXNlclR5cGUiOiJtYW51ZmFjdHVyZXIiLCJOYW1lIjoiTWFudWZhY3R1cmVyIHVzZXIiLCJpYXQiOjE1OTA5MDAyMTEsImV4cCI6MTU5MTUwNTAxMX0.NVnQqipuVQRHMh2fjHhEwUedDIgjmcusHAnQW3DzgIo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"shoes\",\n\t\"price\" :\"120\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/product/:productId/:role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"product",
+								":productId",
+								":role"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "Product1"
+								},
+								{
+									"key": "role",
+									"value": "manufacturer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVzZXIxIiwiVXNlclR5cGUiOiJtYW51ZmFjdHVyZXIiLCJOYW1lIjoiTWFudWZhY3R1cmVyIHVzZXIiLCJpYXQiOjE1OTA5MDAyMTEsImV4cCI6MTU5MTUwNTAxMX0.NVnQqipuVQRHMh2fjHhEwUedDIgjmcusHAnQW3DzgIo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\" : \"Product1\",\n\t\"userId\" : \"User3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/transact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transact"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
